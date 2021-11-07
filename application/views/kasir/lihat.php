@@ -43,7 +43,7 @@
 					</div>
 				<?php endif ?>
 				<div class="card shadow">
-					<div class="card-header"><strong>Daftar User</strong></div>
+					<div class="card-header"><strong>List User Profile </strong></div>
 					<div class="card-body">
 						<div class="table-responsive">
 							<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -52,7 +52,7 @@
 										<td>No</td>
 										<td>Kode User</td>
 										<td>Nama User</td>
-										<td>Username / NIDN</td>
+										<td>NIDN / NIP</td>
 										<?php if ($this->session->login['role'] == 'admin'): ?>
 											<td>Password</td>
 											<td>Aksi</td>
@@ -70,7 +70,7 @@
 												<td><?= $kasir->password_kasir ?></td>
 												<td>
 													<a href="<?= base_url('kasir/ubah/' . $kasir->id) ?>" class="btn btn-success btn-sm"><i class="fa fa-pen"></i></a>
-													<a onclick="return confirm('apakah anda yakin?')" href="<?= base_url('kasir/hapus/' . $kasir->id) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+													<a onclick="return confirm('apakah anda yakin ingin menghapus data ini?')" href="<?= base_url('kasir/hapus/' . $kasir->id) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
 												</td>	
 											<?php endif ?>
 										</tr>

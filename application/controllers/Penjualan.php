@@ -14,7 +14,7 @@ class Penjualan extends CI_Controller {
 	}
 
 	public function index(){
-		$this->data['title'] = 'Data Penjualan';
+		$this->data['title'] = 'Daftar Skim';
 		$this->data['all_penjualan'] = $this->m_penjualan->lihat();
 
 		$this->load->view('penjualan/lihat', $this->data);
@@ -53,10 +53,10 @@ class Penjualan extends CI_Controller {
 			for ($i=0; $i < $jumlah_barang_dibeli ; $i++) { 
 				$this->m_barang->min_stok($data_detail_penjualan[$i]['jumlah_barang'], $data_detail_penjualan[$i]['nama_barang']) or die('gagal min stok');
 			}
-			$this->session->set_flashdata('success', 'Invoice <strong>Penjualan</strong> Berhasil Dibuat!');
+			$this->session->set_flashdata('success', 'Skim <strong>Penelitian</strong> Berhasil Dibuat!');
 			redirect('penjualan');
 		} else {
-			$this->session->set_flashdata('success', 'Invoice <strong>Penjualan</strong> Berhasil Dibuat!');
+			$this->session->set_flashdata('success', 'Skim <strong>Penelitian</strong> Berhasil Dibuat!');
 			redirect('penjualan');
 		}
 	}

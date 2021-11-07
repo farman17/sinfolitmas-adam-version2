@@ -32,18 +32,18 @@
 								<form action="<?= base_url('kasir/proses_tambah') ?>" id="form-tambah" method="POST">
 									<div class="form-row">
 										<div class="form-group col-md-6">
-											<label for="kode_kasir"><strong>Kode Kasir</strong></label>
-											<input type="text" name="kode_kasir" placeholder="Masukkan Kode Kasir" autocomplete="off"  class="form-control" required value="KASIR - <?= mt_rand(10, 99) ?>" maxlength="8" readonly>
+											<label for="kode_kasir"><strong>Kode Pengguna</strong></label>
+											<input type="text" name="kode_kasir" placeholder="Masukkan Kode User" autocomplete="off"  class="form-control" required value="USER - <?= mt_rand(10, 99) ?>" maxlength="8" readonly>
 										</div>
 										<div class="form-group col-md-6">
-											<label for="nama_kasir"><strong>Nama Kasir</strong></label>
-											<input type="text" name="nama_kasir" placeholder="Masukkan Nama Kasir" autocomplete="off"  class="form-control" required>
+											<label for="nama_kasir"><strong>Nama Pegawai</strong></label>
+											<input type="text" name="nama_kasir" placeholder="Masukkan Nama Pegawai" autocomplete="off"  class="form-control" required>
 										</div>
 									</div>
 									<div class="form-row">
 										<div class="form-group col-md-6">
-											<label for="username_kasir"><strong>Username</strong></label>
-											<input type="text" name="username_kasir" placeholder="Masukkan Username" autocomplete="off"  class="form-control" required readonly>
+											<label for="username_kasir"><strong>NIDN/NIP</strong></label>
+											<input type="text" name="username_kasir" placeholder="Masukkan NIDN / NIP" autocomplete="off"  class="form-control" required >
 										</div>
 										<div class="form-group col-md-6">
 											<label for="password_kasir"><strong>Password</strong></label>
@@ -70,8 +70,8 @@
 	<script>
 		$(document).ready(function(){
 			let username_kasir = $('input[name="kode_kasir"]').val().split(' - ');
-			username_kasir = 'KSR' + username_kasir[1]
-			 $('input[name="username_kasir"]').val(username_kasir)
+			
+			 
 		})
 	</script>
 </body>

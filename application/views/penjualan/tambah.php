@@ -17,7 +17,7 @@
 				<div class="container-fluid">
 				<div class="clearfix">
 					<div class="float-left">
-						<h1 class="h3 m-0 text-gray-800"><?= $title ?></h1>
+						<!-- disembunyikan**  h1 class="h3 m-0 text-gray-800"><?= $title ?></h1 -->
 					</div>
 					<div class="float-right">
 						<a href="<?= base_url('penjualan') ?>" class="btn btn-secondary btn-sm"><i class="fa fa-reply"></i>&nbsp;&nbsp;Kembali</a>
@@ -30,7 +30,7 @@
 							<div class="card-header"><strong>Isi Form Dibawah Ini!</strong></div>
 							<div class="card-body">
 								<form action="<?= base_url('penjualan/proses_tambah') ?>" id="form-tambah" method="POST">
-									<h5>Data Kasir</h5>
+									<h5>Data </h5>
 									<hr>
 									<div class="form-row">
 										<div class="form-group col-2">
@@ -58,9 +58,9 @@
 									<hr>
 									<div class="form-row">
 										<div class="form-group col-3">
-											<label for="nama_barang">Nama Barang</label>
+											<label for="nama_barang">Pilih Kategori</label>
 											<select name="nama_barang" id="nama_barang" class="form-control">
-												<option value="">Pilih Barang</option>
+												<option value="">--Pilih Kategori--</option>
 												<?php foreach ($all_barang as $barang): ?>
 													<option value="<?= $barang->nama_barang ?>"><?= $barang->nama_barang ?></option>
 												<?php endforeach ?>

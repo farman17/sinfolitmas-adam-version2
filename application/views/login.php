@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>SINFOLITMAS</title>
+	<title>WELCOME!</title>
 	<link href="<?= base_url('sb-admin') ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 	<link href="<?= base_url('sb-admin') ?>/css/sb-admin-2.min.css" rel="stylesheet">
@@ -48,8 +48,11 @@
 										</div>
 									<?php endif ?>
 									<div class="text-center">
-										<h1 class="h4 text-gray-900 mb-4">SINFOLITMAS</h1>
+									
+ <i class="fab fa-asymmetrik fa-2x text-gray-600" ></i> 
+	<h1 class="h4 text-gray-900 mb-4">SINFOLITMAS</h1>
 									</div>
+
 									<form class="user" method="POST" action="<?= base_url('login/proses_login') ?>">
 										<div class="form-group">
 											<input type="text" class="form-control" id="username" placeholder="Masukkan NIDN" autocomplete="off" required name="username">
