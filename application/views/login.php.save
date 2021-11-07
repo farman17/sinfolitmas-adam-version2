@@ -49,9 +49,10 @@
 									<?php endif ?>
 									<div class="text-center ">
 									
- <i class="fab fa-asymmetrik fa-8x text-gray-600 " ></i> 
-	<h1>SINFOLITMAS</h1></div>
+ <i class="fab fa-asymmetrik fa-3x text-gray-600 " ></i> 
+	<h1>SINFOLITMAS</h1><p class="unicase">My name is Hege Refsnes.</p></div>
 <style>
+
 
 h1 {
 font-family: dejavu sans;
