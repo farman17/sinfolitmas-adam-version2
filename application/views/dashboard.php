@@ -114,11 +114,11 @@
 		        <div class="row">
 		          	<div class="col-md-6">
 						<div class="card shadow">
-							<div class="card-header"><strong>Profil Toko</strong></div>
+							<div class="card-header"><strong>Profil Kampus</strong></div>
 							<div class="card-body">
-								<strong>Nama Toko : </strong><br>
+								<strong>Nama Kampus : </strong><br>
 								<input  type="text" value="<?= $toko->nama_toko ?>" readonly class="form-control mt-2 mb-2">
-								<strong>Nama Pemilik : </strong><br>
+								<strong>Nama Rektor : </strong><br>
 								<input  type="text" value="<?= $toko->nama_pemilik ?>" readonly class="form-control mt-2 mb-2">
 								<strong>No Telepon : </strong><br>
 								<input  type="text" value="<?= $toko->no_telepon ?>" readonly class="form-control mt-2 mb-2">
@@ -133,7 +133,7 @@
 							<div class="card-body">
 								<strong>Nama : </strong><br>
 								<input type="text" value="<?= $this->session->login['nama'] ?>" readonly class="form-control mt-2 mb-2">
-								<strong>Username : </strong><br>
+								<strong>Username / NIDN : </strong><br>
 								<input type="text" value="<?= $this->session->login['username'] ?>" readonly class="form-control mt-2 mb-2">
 								<strong>Role : </strong><br>
 								<input type="text" value="<?= $this->session->login['role'] ?>" readonly class="form-control mt-2 mb-2">

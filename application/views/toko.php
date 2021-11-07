@@ -46,11 +46,11 @@
 							<div class="card-body">
 								<form action="<?= base_url('toko/proses_ubah') ?>" id="form-tambah" method="POST">
 									<div class="form-group">
-										<label for="nama_toko"><strong>Nama Toko : </strong></label>
+										<label for="nama_toko"><strong>Nama Kampus : </strong></label>
 										<input type="text" name="nama_toko" id="nama_toko" value="<?= $toko->nama_toko ?>" placeholder="Masukan Nama Toko" class="form-control" readonly>
 									</div>
 									<div class="form-group">
-										<label for="nama_toko"><strong>Nama Pemilik : </strong></label>
+										<label for="nama_toko"><strong>Nama Rektor : </strong></label>
 										<input type="text" name="nama_pemilik" id="nama_pemilik" value="<?= $toko->nama_pemilik ?>" placeholder="Masukan Nama Pemilik" class="form-control" readonly>
 									</div>
 									<div class="form-group">
@@ -58,7 +58,7 @@
 										<input type="number" name="no_telepon" id="no_telepon" value="<?= $toko->no_telepon ?>" placeholder="Masukan No Telepon" class="form-control" readonly>
 									</div>
 									<div class="form-group">
-										<label for="alamat"><strong>Alamat</strong></label>
+										<label for="alamat"><strong>Alamat : </strong></label>
 										<textarea readonly name="alamat" id="alamat" class="form-control" placeholder="Masukan Alamat" style="resize: none;"><?= $toko->alamat ?></textarea>
 									</div>
 									<hr>

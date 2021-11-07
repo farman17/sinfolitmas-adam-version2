@@ -43,16 +43,16 @@
 					</div>
 				<?php endif ?>
 				<div class="card shadow">
-					<div class="card-header"><strong>Daftar Kasir</strong></div>
+					<div class="card-header"><strong>Daftar User</strong></div>
 					<div class="card-body">
 						<div class="table-responsive">
 							<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 								<thead>
 									<tr>
 										<td>No</td>
-										<td>Kode Kasir</td>
-										<td>Nama Kasir</td>
-										<td>Username</td>
+										<td>Kode User</td>
+										<td>Nama User</td>
+										<td>Username / NIDN</td>
 										<?php if ($this->session->login['role'] == 'admin'): ?>
 											<td>Password</td>
 											<td>Aksi</td>
