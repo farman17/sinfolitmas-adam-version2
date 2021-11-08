@@ -2,20 +2,20 @@
 
 use Dompdf\Dompdf;
 
-class Kasir extends CI_Controller{
+class Pegawai extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
 		if($this->session->login['role'] != 'kasir' && $this->session->login['role'] != 'admin') redirect();
-		$this->data['aktif'] = 'kasir';
-		$this->load->model('M_kasir', 'm_kasir');
+		$this->data['aktif'] = 'pegawai';
+		$this->load->model('M_pegawai', 'm_pegawai');
 	}
 
 	public function index(){
 		$this->data['title'] = 'Master Pegawai';
-		$this->data['all_kasir'] = $this->m_kasir->lihat();
+		$this->data['all_pegawai'] = $this->m_pegawai->lihat();
 		$this->data['no'] = 1;
 
-		$this->load->view('kasir/lihat', $this->data);
+		$this->load->view('pegawai/lihat', $this->data);
 	}
 
 	public function tambah(){
@@ -26,7 +26,7 @@ class Kasir extends CI_Controller{
 
 		$this->data['title'] = 'Tambah Data Pegawai';
 
-		$this->load->view('kasir/tambah', $this->data);
+		$this->load->view('pegawai/tambah', $this->data);
 	}
 
 	public function proses_tambah(){
@@ -42,12 +42,12 @@ class Kasir extends CI_Controller{
 			'password_kasir' => $this->input->post('password_kasir'),
 		];
 
-		if($this->m_kasir->tambah($data)){
-			$this->session->set_flashdata('success', 'Data Kasir <strong>Berhasil</strong> Ditambahkan!');
-			redirect('kasir');
+		if($this->m_pegawai->tambah($data)){
+			$this->session->set_flashdata('success', 'Data User <strong>Berhasil</strong> Ditambahkan!');
+			redirect('pegawai');
 		} else {
-			$this->session->set_flashdata('error', 'Data Kasir <strong>Gagal</strong> Ditambahkan!');
-			redirect('kasir');
+			$this->session->set_flashdata('error', 'Data User <strong>Gagal</strong> Ditambahkan!');
+			redirect('pegawai');
 		}
 	}
 
@@ -58,9 +58,9 @@ class Kasir extends CI_Controller{
 		}
 
 		$this->data['title'] = 'Edit Data Pegawai';
-		$this->data['kasir'] = $this->m_kasir->lihat_id($id);
+		$this->data['pegawai'] = $this->m_pegawai->lihat_id($id);
 
-		$this->load->view('kasir/ubah', $this->data);
+		$this->load->view('pegawai/ubah', $this->data);
 	}
 
 	public function proses_ubah($id){
@@ -76,12 +76,12 @@ class Kasir extends CI_Controller{
 			'password_kasir' => $this->input->post('password_kasir'),
 		];
 
-		if($this->m_kasir->ubah($data, $id)){
+		if($this->m_pegawai->ubah($data, $id)){
 			$this->session->set_flashdata('success', 'Data User <strong>Berhasil</strong> Diubah!');
-			redirect('kasir');
+			redirect('pegawai');
 		} else {
 			$this->session->set_flashdata('error', 'Data User <strong>Gagal</strong> Diubah!');
-			redirect('kasir');
+			redirect('pegawai');
 		}
 	}
 
@@ -91,12 +91,12 @@ class Kasir extends CI_Controller{
 			redirect('penjualan');
 		}
 
-		if($this->m_kasir->hapus($id)){
-			$this->session->set_flashdata('success', 'Data Kasir <strong>Berhasil</strong> Dihapus!');
-			redirect('kasir');
+		if($this->m_pegawai->hapus($id)){
+			$this->session->set_flashdata('success', 'Data User <strong>Berhasil</strong> Dihapus!');
+			redirect('pegawai');
 		} else {
-			$this->session->set_flashdata('error', 'Data Kasir <strong>Gagal</strong> Dihapus!');
-			redirect('kasir');
+			$this->session->set_flashdata('error', 'Data User <strong>Gagal</strong> Dihapus!');
+			redirect('pegawai');
 		}
 	}
 

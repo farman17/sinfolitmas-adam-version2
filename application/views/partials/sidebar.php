@@ -26,8 +26,8 @@
 
 
 
-			<li class="nav-item <?= $aktif == 'kasir' ? 'active' : '' ?>">
-				<a class="nav-link" href="<?= base_url('kasir') ?>">
+			<li class="nav-item <?= $aktif == 'pegawai' ? 'active' : '' ?>">
+				<a class="nav-link" href="<?= base_url('pegawai') ?>">
 					</i>  <i class="fas fa-user-check"></i>
 					<span>Master Pegawai</span></a>
 			</li>
@@ -45,8 +45,8 @@
 					<span>Transaksi Penjualan</span></a>
 			</li-->
 
- <li class="nav-item <?= $aktif == 'penjualan' ? 'active' : '' ?>">
-                                <a class="nav-link" href="<?= base_url('penjualan') ?>">
+ <li class="nav-item <?= $aktif == 'skim' ? 'active' : '' ?>">
+                                <a class="nav-link" href="<?= base_url('skim') ?>">
                                   <i class="fas fa-book-reader"></i>
                                         <span>Daftar Skim</span></a>
                         </li>
