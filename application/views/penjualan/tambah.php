@@ -57,15 +57,17 @@
 									<h5>Data Barang</h5>
 									<hr>
 									<div class="form-row">
-										<div class="form-group col-3">
-											<label for="nama_barang">Pilih Kategori</label>
-											<select name="nama_barang" id="nama_barang" class="form-control">
-												<option value="">--Pilih Kategori--</option>
-												<?php foreach ($all_barang as $barang): ?>
-													<option value="<?= $barang->nama_barang ?>"><?= $barang->nama_barang ?></option>
-												<?php endforeach ?>
+								<div class="form-group col-3">
+								     <label for="nama_barang">Pilih Kategori</label>
+								<select name="nama_barang" id="nama_barang" class="form-control">
+										<option value="">--Pilih Kategori--</option>
+									<?php foreach ($all_barang as $barang): ?>
+							<option value="<?= $barang->nama_barang ?>"><?= $barang->nama_barang ?></option>
+											<?php endforeach ?>
 											</select>
 										</div>
+
+
 										<div class="form-group col-2">
 											<label>Kode Barang</label>
 											<input type="text" name="kode_barang" value="" readonly class="form-control">

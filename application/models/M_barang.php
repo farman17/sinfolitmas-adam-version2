@@ -14,7 +14,7 @@ class M_barang extends CI_Model{
 	}
 
 	public function lihat_stok(){
-		$query = $this->db->get_where($this->_table, 'stok > 1');
+		$query = $this->db->get_where($this->_table);
 		return $query->result();
 	}
 
@@ -34,12 +34,7 @@ class M_barang extends CI_Model{
 		return $this->db->insert($this->_table, $data);
 	}
 
-	public function min_stok($stok, $nama_barang){
-		$query = $this->db->set('stok', 'stok-' . $stok, false);
-		$query = $this->db->where('nama_barang', $nama_barang);
-		$query = $this->db->update($this->_table);
-		return $query;
-	}
+	
 
 	public function ubah($data, $kode_barang){
 		$query = $this->db->set($data);

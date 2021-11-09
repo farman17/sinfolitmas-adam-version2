@@ -10,7 +10,7 @@
 		<?php $this->load->view('partials/sidebar.php') ?>
 
 		<div id="content-wrapper" class="d-flex flex-column">
-			<div id="content" data-url="<?= base_url('skim') ?>">
+			<div id="content" data-url="<?= base_url('penawaran') ?>">
 				<!-- load Topbar -->
 				<?php $this->load->view('partials/topbar.php') ?>
 
@@ -20,8 +20,10 @@
 						<h1 class="h3 m-0 text-gray-800"><?= $title ?></h1>
 					</div>
 					<div class="float-right">
-						<a href="<?= base_url('skim/export') ?>" class="btn btn-danger btn-sm"><i class="fa fa-file-pdf"></i>&nbsp;&nbsp;Export</a>
-						<a href="<?= base_url('skim/tambah') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>&nbsp;&nbsp;Tambah</a>
+						<?php if ($this->session->login['role'] == 'admin'): ?>
+							<a href="<?= base_url('penawaran/export') ?>" class="btn btn-danger btn-sm"><i class="fa fa-file-pdf"></i>&nbsp;&nbsp;Export</a>
+							<a href="<?= base_url('penawaran/tambah') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>&nbsp;&nbsp;Tambah</a>
+						<?php endif ?>
 					</div>
 				</div>
 				<hr>
@@ -41,30 +43,36 @@
 					</div>
 				<?php endif ?>
 				<div class="card shadow">
-					<div class="card-header"><strong>Halaman Daftar Penelitian</strong></div>
+					<div class="card-header"><strong>List User Profile </strong></div>
 					<div class="card-body">
 						<div class="table-responsive">
 							<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 								<thead>
 									<tr>
-										<td>Nomor Form</td>
+										<td>No</td>
+										<td>Kode User</td>
 										<td>Nama User</td>
-										<td>Tanggal Input Data</td>
-										<td>Total</td>
-										<td>Aksi</td>
+										<td>NIDN / NIP</td>
+										<?php if ($this->session->login['role'] == 'admin'): ?>
+											<td>Password</td>
+											<td>Aksi</td>
+										<?php endif ?>
 									</tr>
 								</thead>
 								<tbody>
-									<?php foreach ($all_skim as $skim): ?>
+									<?php foreach ($all_penawaran as $kasir): ?>
 										<tr>
-											<td><?= $skim->no_penjualan ?></td>
-											<td><?= $skim->nama_kasir ?></td>
-											<td><?= $skim->tgl_penjualan ?> Pukul <?= $skim->jam_penjualan ?></td>
-											<td>Rp <?= number_format($skim->total, 0, ',', '.') ?></td>
-											<td>
-												<a href="<?= base_url('skim/detail/' . $skim->no_penjualan) ?>" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
-												<a onclick="return confirm('apakah anda yakin ingin menghapus data skim ini?')" href="<?= base_url('skim/hapus/' . $skim->no_penjualan) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
-											</td>
+											<td><?= $no++ ?></td>
+											<td><?= $kasir->kode_kasir ?></td>
+											<td><?= $kasir->nama_kasir ?></td>
+											<td><?= $kasir->username_kasir ?></td>
+											<?php if ($this->session->login['role'] == 'admin'): ?>
+												<td><?= $kasir->password_kasir ?></td>
+												<td>
+													<a href="<?= base_url('penawaran/ubah/' . $kasir->id) ?>" class="btn btn-success btn-sm"><i class="fa fa-pen"></i></a>
+													<a onclick="return confirm('apakah anda yakin ingin menghapus data ini?')" href="<?= base_url('penawaran/hapus/' . $kasir->id) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+												</td>	
+											<?php endif ?>
 										</tr>
 									<?php endforeach ?>
 								</tbody>

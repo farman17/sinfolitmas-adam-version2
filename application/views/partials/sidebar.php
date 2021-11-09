@@ -36,7 +36,7 @@
 			<hr class="sidebar-divider">
 	
 			<div class="sidebar-heading">
-				Transaksi
+				Services Activity
 			</div>
 
 			<!-- bagian ini di nonaktifkan*** li class="nav-item <?= $aktif == 'penjualan' ? 'active' : '' ?>">
@@ -45,14 +45,14 @@
 					<span>Transaksi Penjualan</span></a>
 			</li-->
 
- <li class="nav-item <?= $aktif == 'skim' ? 'active' : '' ?>">
-                                <a class="nav-link" href="<?= base_url('skim') ?>">
+ <li class="nav-item <?= $aktif == 'skema' ? 'active' : '' ?>">
+                                <a class="nav-link" href="<?= base_url('skema') ?>">
                                   <i class="fas fa-book-reader"></i>
                                         <span>Daftar Skim</span></a>
                         </li>
 
- <li class="nav-item <?= $aktif == 'penjualan' ? 'active' : '' ?>">
-                                <a class="nav-link" href="<?= base_url('penjualan') ?>">
+ <li class="nav-item <?= $aktif == 'penawaran' ? 'active' : '' ?>">
+                                <a class="nav-link" href="<?= base_url('penawaran') ?>">
                                         <i class="fas fa-american-sign-language-interpreting"></i>
                                         <span>Daftar Tawaran</span></a>
                         </li>
@@ -107,7 +107,7 @@
 				<li class="nav-item <?= $aktif == 'pengguna' ? 'active' : '' ?>">
 					<a class="nav-link" href="<?= base_url('pengguna') ?>">
 						<i class="fas fa-fw fa-users"></i>
-						<span>Manajemen Pengguna</span></a>
+						<span>Master Admin</span></a>
 				</li>
 
 				<li class="nav-item <?= $aktif == 'toko' ? 'active' : '' ?>">

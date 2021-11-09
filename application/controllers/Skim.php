@@ -51,7 +51,7 @@ class Skim extends CI_Controller {
 
 		if($this->m_skim->tambah($data_penjualan) && $this->m_detail_penjualan->tambah($data_detail_penjualan)){
 			for ($i=0; $i < $jumlah_barang_dibeli ; $i++) { 
-				$this->m_barang->min_stok($data_detail_penjualan[$i]['jumlah_barang'], $data_detail_penjualan[$i]['nama_barang']) or die('gagal min stok');
+				
 			}
 			$this->session->set_flashdata('success', 'Skim <strong>Penelitian</strong> Berhasil Dibuat!');
 			redirect('skim');

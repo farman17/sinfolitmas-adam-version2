@@ -10,18 +10,20 @@
 		<?php $this->load->view('partials/sidebar.php') ?>
 
 		<div id="content-wrapper" class="d-flex flex-column">
-			<div id="content" data-url="<?= base_url('skim') ?>">
+			<div id="content" data-url="<?= base_url('skema') ?>">
 				<!-- load Topbar -->
 				<?php $this->load->view('partials/topbar.php') ?>
 
 				<div class="container-fluid">
 				<div class="clearfix">
 					<div class="float-left">
-						<h1 class="h3 m-0 text-gray-800"><?= $title ?></h1>
+						<!-- h1 class="h3 m-0 text-gray-800"><?= $title ?></h1 -->
 					</div>
 					<div class="float-right">
-						<a href="<?= base_url('skim/export') ?>" class="btn btn-danger btn-sm"><i class="fa fa-file-pdf"></i>&nbsp;&nbsp;Export</a>
-						<a href="<?= base_url('skim/tambah') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>&nbsp;&nbsp;Tambah</a>
+						<?php if ($this->session->login['role'] == 'admin'): ?>
+							<a href="<?= base_url('skema/export') ?>" class="btn btn-danger btn-sm"><i class="fa fa-file-pdf"></i>&nbsp;&nbsp;Export</a>
+							<a href="<?= base_url('skema/tambah') ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>&nbsp;&nbsp;Tambah</a>
+						<?php endif ?>
 					</div>
 				</div>
 				<hr>
@@ -41,30 +43,36 @@
 					</div>
 				<?php endif ?>
 				<div class="card shadow">
-					<div class="card-header"><strong>Halaman Daftar Penelitian</strong></div>
+					<div class="card-header"><strong>Daftar Skim</strong></div>
 					<div class="card-body">
 						<div class="table-responsive">
 							<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 								<thead>
 									<tr>
-										<td>Nomor Form</td>
-										<td>Nama User</td>
-										<td>Tanggal Input Data</td>
-										<td>Total</td>
-										<td>Aksi</td>
+										<td>NO</td>
+                                                                             
+										<td>KATEGORI</td>
+										<td>SKIM</td>
+										<td>SYARAT</td>
+										
+											<td>AKSI</td>
+										
 									</tr>
 								</thead>
 								<tbody>
-									<?php foreach ($all_skim as $skim): ?>
+									<?php foreach ($all_skema as $skema): ?>
 										<tr>
-											<td><?= $skim->no_penjualan ?></td>
-											<td><?= $skim->nama_kasir ?></td>
-											<td><?= $skim->tgl_penjualan ?> Pukul <?= $skim->jam_penjualan ?></td>
-											<td>Rp <?= number_format($skim->total, 0, ',', '.') ?></td>
-											<td>
-												<a href="<?= base_url('skim/detail/' . $skim->no_penjualan) ?>" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
-												<a onclick="return confirm('apakah anda yakin ingin menghapus data skim ini?')" href="<?= base_url('skim/hapus/' . $skim->no_penjualan) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
-											</td>
+											<td><?= $no++ ?></td>
+											
+											<td><?= $skema->kategori ?></td>
+											<td><?= $skema->nama_skim ?></td>
+                                                                                        <td><i class="far fa-check-circle"></i> Pendidikan Terakhir : <?= $skema->min_pendidikan ?> <br><i class="far fa-check-circle"></i> Jabatan Saat ini : <?= $skema->min_jabatan ?><br><i class="far fa-check-circle"></i> Jumlah Anggota : <?= $skema->min_anggota ?> - <?= $skema->max_anggota ?> orang<br> <i class="far fa-check-circle"></i> Range Biaya Pengajuan : Rp.<?= $skema->min_biaya ?> - Rp.<?= $skema->max_biaya ?><br><i class="far fa-check-circle"></i> Waktu Pelaksanaan : <?= $skema->min_pelaksana ?> - <?= $skema->max_pelaksana ?> Tahun</td>
+
+												<td>
+													<a href="<?= base_url('skema/ubah/' . $skema->id) ?>" class="btn btn-success btn-sm"><i class="fa fa-pen"></i></a>
+													<a onclick="return confirm('apakah anda yakin ingin menghapus data ini?')" href="<?= base_url('skema/hapus/' . $skema->id) ?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+												</td>
+
 										</tr>
 									<?php endforeach ?>
 								</tbody>
